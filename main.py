@@ -34,7 +34,7 @@ def sendmail(message):
         connection.starttls()
         connection.login(user=MY_EMAIL, password=PASSWORD)
         connection.sendmail(from_addr=MY_EMAIL,
-                            to_addrs='loveufcfights@gmail.com',
+                            to_addrs=os.environ['RecieveMail'],
                             msg=f"Subject:Blog Message\n\n{message}"
                             )
 
